@@ -1,0 +1,20 @@
+server:
+  port: 8090
+
+learning:
+  randomData:
+    baseurl: https://random-data-api.com
+  beer:
+    api: /api/v2/beers?size=
+    beerApi: ${learning.randomData.baseurl}${learning.beer.api}
+  restApiDev:
+    baseurl: https://api.restful-api.dev
+    api: ${learning.restApiDev.baseurl}/objects
+
+# Feign configuration
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
