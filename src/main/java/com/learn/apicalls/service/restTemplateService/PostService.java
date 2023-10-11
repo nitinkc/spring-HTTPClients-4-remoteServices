@@ -1,4 +1,4 @@
-package com.learn.apicalls.service;
+package com.learn.apicalls.service.restTemplateService;
 
 import com.learn.apicalls.model.MyDto;
 import com.learn.apicalls.model.MyRequestBody;

@@ -1,11 +1,27 @@
 # Rest Template
 
+Rest Template is synchronous client to perform HTTP requests.
+
+* By default, RestTemplate uses the class `java.net.HttpURLConnection` as the HTTP client.
+* We can  switch to another HTTP client library (like `org.apache.httpcomponents:httpclient:4.5.14`)
+
+
+The non-blocking `WebClient` is provided by the Spring framework as a modern alternative
+to the RestTemplate.
+
+
+RestTemplate is based on a thread-per-request model. 
+
+Every request to RestTemplate blocks until the response is received. 
+
+As a result, applications using RestTemplate will not scale well with an increasing number of concurrent users.
+
 ## Configuration
 
 configure the bean in the main application class **via Configuration**
 ```java
 @Configuration
-public class RestTemplateConfir {
+public class RestTemplateConfig {
 
     @Bean
     public RestTemplate restTemplate() {
@@ -255,3 +271,4 @@ public MyDto saveData(MyRequestBody myRequestBody) {
 Scenario : PUT save data into a DB by calling a microservice Synchronously with the data on the HTTP Request Body
 
 
+# Sending HTTP requests with Spring WebClient
